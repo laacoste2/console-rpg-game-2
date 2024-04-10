@@ -18,12 +18,12 @@ namespace RPGConsoleGame
 
         public void UseClassAbility()
         {
-            Console.WriteLine("The Mage throw a Fireball.");
+            Console.WriteLine("O Mago lançou uma bola de fogo.");
         }
 
         public void UseClassAtack()
         {
-            Console.WriteLine("The Mage uses his staff to hit the Enemy");
+            Console.WriteLine("O Mago usou seu cajado para acertar o inimigo.");
         }
     }
 }

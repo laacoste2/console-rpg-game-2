@@ -18,12 +18,12 @@ namespace RPGConsoleGame
 
         public void UseClassAbility()
         {
-            Console.WriteLine("The Knight uses his sword to pierce the enemy's weak point");
+            Console.WriteLine("O Cavaleiro usa sua espada para perfurar o ponto fraco de seu inimigo.");
         }
 
         public void UseClassAtack()
         {
-            Console.WriteLine("The Knight attack with his sword");
+            Console.WriteLine("O Cavaleiro atacou utilizando sua espada");
         }
     }
 }

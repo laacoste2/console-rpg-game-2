@@ -4,10 +4,10 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter your character name: ");
+            Console.WriteLine("Informe o nome do seu personagem: ");
             string nameChoise = Console.ReadLine();
 
-            Console.WriteLine("\nChoose your CLASS: [K]night - [M]age - [A]rcher");
+            Console.WriteLine("\nEscolha sua classe: [K]night - [M]age - [A]rcher");
             string classChoise = Console.ReadLine();
 
             IClass characterClass;
@@ -26,13 +26,18 @@
                     break;
 
                 default:
-                    Console.WriteLine("Invalid Class Choise");
+                    Console.WriteLine("Classe Invalida");
                     return;
             }
 
+            Console.Clear();
             Character character = new Character(nameChoise, characterClass);
 
-            
+            Dialogues.Dialogue1AndStartOfTheJourney(character);
+
+            Console.Clear();
+
+            Console.WriteLine("");
         }
     }
 }

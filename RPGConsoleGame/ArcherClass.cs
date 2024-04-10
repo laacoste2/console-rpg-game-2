@@ -18,12 +18,12 @@ namespace RPGConsoleGame
 
         public void UseClassAbility()
         {
-            Console.WriteLine("The Archer sets fire on his arrow.");
+            Console.WriteLine("O Arqueiro jogou fogo em sua flecha.");
         }
 
         public void UseClassAtack()
         {
-            Console.WriteLine("The Archer uses his bow to throw a arrow on his enemy");
+            Console.WriteLine("O Arqueiro usa seu arco para lançar uma flecha em seu inimigo");
         }
     }
 }
