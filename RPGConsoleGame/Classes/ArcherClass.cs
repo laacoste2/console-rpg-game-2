@@ -1,19 +1,14 @@
-﻿using System;
+﻿using RPGConsoleGame.Monsters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPGConsoleGame
+namespace RPGConsoleGame.Classes
 {
     internal class ArcherClass : IClass
     {
-        private int _health = 30;
-        private int _strenght = 5;
-
-        public int Health { get => _health; }
-        public int Strenght { get => _strenght; }
-
         public ArcherClass() { }
 
         public void UseClassAbility()

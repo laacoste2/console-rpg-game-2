@@ -1,4 +1,7 @@
-﻿namespace RPGConsoleGame
+﻿using RPGConsoleGame.Classes;
+using RPGConsoleGame.Monsters;
+
+namespace RPGConsoleGame
 {
     class Program
     {
@@ -33,11 +36,25 @@
             Console.Clear();
             Character character = new Character(nameChoise, characterClass);
 
-            Dialogues.Dialogue1AndStartOfTheJourney(character);
+            DialoguesAndCombatSystem.Dialogue1AndStartOfTheJourney(character);
 
             Console.Clear();
 
-            Console.WriteLine("");
+            Monster spider = new Monster("Spider", 10, 1);
+            Console.WriteLine(character.Name + " encontra algo que se parece com uma aranha, mas com dentes afiados...");
+            Console.WriteLine("Com o susto que levou da aranha, " + character.Name + " acaba pisando em um galho.");
+            Console.WriteLine("Com isso, a aranha acaba percebendo sua presença e parte pra cima dele.");
+            Console.ReadKey();
+            Console.Clear();
+
+            Console.WriteLine("- * - * - * - * - * -");
+            Console.WriteLine("Combate Iniciado!");
+            Console.WriteLine("- * - * - * - * - * -");
+
+            Console.ReadKey();
+            Console.Clear();
+
+            DialoguesAndCombatSystem.CombatSystem(character, spider);
         }
     }
 }

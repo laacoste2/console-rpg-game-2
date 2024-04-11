@@ -1,19 +1,14 @@
-﻿using System;
+﻿using RPGConsoleGame.Monsters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPGConsoleGame
+namespace RPGConsoleGame.Classes
 {
     internal class KnightClass : IClass
     {
-        private int _health = 35;
-        private int _strenght = 4;
-
-        public int Health { get => _health; }
-        public int Strenght { get => _strenght; }
-
         public KnightClass() { }
 
         public void UseClassAbility()

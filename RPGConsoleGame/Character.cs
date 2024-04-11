@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RPGConsoleGame.Classes;
+using RPGConsoleGame.Monsters;
 
 namespace RPGConsoleGame
 {
@@ -10,6 +12,11 @@ namespace RPGConsoleGame
     {
         public string Name { get; set; }
         public IClass Class { get; set; }
+        private int _health = 30;
+        private int _strenght = 10;
+
+        public int Health { get => _health; set => _health = value; }
+        public int Strenght { get => _strenght; set => _strenght = value; }
 
         public Character(string name, IClass characterClass) 
         {
@@ -17,14 +24,18 @@ namespace RPGConsoleGame
             Class = characterClass;
         }
 
-        public void UseClassAbilityAction()
+        public void UseClassAbility(Monster monster)
         {
             Class.UseClassAbility();
+            monster.Health -= (Strenght + 10);
+            Console.WriteLine("Vida atual do monstro: " + monster.Health);
         }
 
-        public void UseAttackAction()
+        public void UseAttack(Monster monster)
         {
             Class.UseClassAtack();
+            monster.Health -= Strenght;
+            Console.WriteLine("Vida atual do monstro: " + monster.Health);
         }
 
     }

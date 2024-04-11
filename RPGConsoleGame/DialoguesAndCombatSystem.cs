@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPGConsoleGame.Monsters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RPGConsoleGame
 {
-    internal static class Dialogues
+    internal static class DialoguesAndCombatSystem
     {
         public static void Dialogue1AndStartOfTheJourney(Character character)
         {
@@ -37,6 +38,35 @@ namespace RPGConsoleGame
                 Console.WriteLine("Seu personagem MORREU!");
                 Console.ReadKey();
                 Environment.Exit(0);
+            }
+        }
+
+        public static void CombatSystem(Character character, Monster monster)
+        {
+            while (character.Health > 0 && monster.Health > 0)
+            {
+                bool showMonsterAttackMessage = true;
+                character.UseAttack(monster);
+                if (monster.Health <= 0)
+                {
+                    Console.WriteLine("\nO monstro morreu. " + character.Name + " venceu a batalha! ");
+                    Console.WriteLine("Ao matar o monstro, seu personagem ganha algumas moedas.");
+                    //Adicionar sistema de moedas depois
+                    showMonsterAttackMessage = false;
+                }
+
+                if(showMonsterAttackMessage)
+                {
+                    monster.useAttack(character);
+                    if (character.Health <= 0)
+                    {
+                        Console.WriteLine("\nSeu personagem morreu e sua aventura acaba aqui.");
+                        Console.ReadLine();
+                        Environment.Exit(0);
+                    }
+                }
+                
+
             }
         }
     }
